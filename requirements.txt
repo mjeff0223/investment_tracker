@@ -1,0 +1,6 @@
+requests
+lxml
+appdirs
+Pandas
+Numpy
+yfinance
