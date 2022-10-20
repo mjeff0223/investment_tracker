@@ -1,39 +1,30 @@
 import yfinance as yf
-import json
 
 
-def get_price():
-    global ticker
-    global price
-    ticker = input("What is the ticker? ")
-    ticker = ticker.upper()
-    stock = yf.Ticker(ticker).info
-    price = stock['regularMarketPrice']
-    return price 
 
-def get_average():
-    buy_price = price
-    num_shares = int(input("How many shares did you buy? "))
-    average = buy_price/num_shares
+
 
 
 def add_to_portfolio(portfolio):
+    ticker = input("What is the ticker of the stock you bought? ")
     num_shares = int(input("How many shares did you buy? "))
-    price = get_price()
-    purchase_amount = int(input("What is the total purchase amount? "))
+    price = int(input("What was the price of the shares? "))
+    purchase_amount = price * num_shares
     portfolio[ticker] = {}
     portfolio[ticker]["value"]= purchase_amount
     portfolio[ticker]["avg_cost"]= purchase_amount/num_shares
     portfolio[ticker]["shares"]= num_shares
-    print("New portfolio: ", portfolio)
-    return portfolio
+    return "New portfolio: ", portfolio
+    
     
 
+
+ticker = None
 
 
 
 portfolio = {
-    "APPL":{
+    f"{ticker}":{
         "value": 0,
         "avg_cost": 0,
         "shares": 0
