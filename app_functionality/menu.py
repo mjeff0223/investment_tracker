@@ -18,10 +18,14 @@ def navigate_menu():
         if prtfolio_class.portfolio != {}:
             prtfolio_class.show_portfolio(prtfolio_class.portfolio)
         else:
-            print("You have not made any purchases yet")
+            print("\nYou have not made any purchases yet\n")
     elif user_choice == "2":
         prtfolio_class.add_to_portfolio(prtfolio_class.portfolio)
         print("Transaction Successful")
+    elif user_choice == "3":
+        prtfolio_class.get_stock_data()
+    elif user_choice == "4":
+        print("This feature is coming soon!")
 
     elif user_choice == "5":
         exit()
