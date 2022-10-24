@@ -3,6 +3,13 @@ import yfinance as yf
 
 portfolio = {}
 
+def get_stock_data():
+    tkr = input("What is the ticker? ").upper()
+    obj = yf.Ticker(tkr)
+    result = '\n'.join(f'{key}: {value}' for key, value in obj.info.items())
+    print(result)
+
+
 
 
 
